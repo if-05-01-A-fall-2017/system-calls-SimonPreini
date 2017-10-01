@@ -1,0 +1,21 @@
+fork:	Creates a new process by duplicating the calling process.New Process is the child process and the calling process is referred to as the parent process.
+	return value: if the process is created the function returns the PID.
+	ERROR: ENOSYS; is not supported on this platform
+stat:	These function returns information about the file pointed to by pathname.
+kill: 	The kill() system call can be used to send to the process with the ID specified by pid.
+	return value: On success, zero is returned. On error, -1 is returned, and errno is set appropriately 
+	ERROR: EPERM; The process does not have permission to send the signal to any of the target processes.
+mmap:	creates a new mapping in the virtual address space of the calling process. The starting address for the new mapping is specified in addr. The length argument specifies the length of the mapping. 
+	return value: On success, a pointer to the mapped area is returned. on error, the value -1 is returned, and errno is set to indicate the cause of the error.
+chmod:	changes the permission of a file specified whose pathname is given in pathname.
+	return value: on sucess 0 is returned, on error -1 and errno is set appropriately.
+	ERROR: ENOENT; The file does not exist.
+waitpid:suspends execution of the calling process until a child specified by pid argument has changed state. 
+	return value: on sucess, returns the process ID of the child whose state has changed. if WNOHANG was specified and one or more child(ren) specified by pid exist, but have not yet changed state, then 0 is returned. On error, -1 is returned.
+exec:	ERROR: All of these functions may fail and set errno for any of the errors specified for execve.
+unlink:	ERROR: EISDIR; pathname refers to a directory.
+read:	ERROR: EISDIR; fd refers to a directory.
+mount:	ERROR: EPERM; The caller does not have the required privileges.
+
+
+trap: is used to switch between User an Kernel Mode
